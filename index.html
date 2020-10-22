@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <meta name="description" content="A Truth Table generator written in Vue."/>
+    <meta name="keywords" content="html, html5, css, css3, css-grid, js, json, vue, vuejs"/>
+    <meta name="robots" content="index"/>
+    <meta name="author" content="Modscleo4"/>
+
+    <title>Truth Table</title>
+
+    <!-- Bootstrap 4.5.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome 4.7.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/themes/light.css"/>
+    <link rel="stylesheet" href="css/themes/dark.css"/>
+
+    <link rel="manifest" href="manifest.json"/>
+
+    <link rel="icon" href="favicon.png"/>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78177802-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-78177802-4');
+    </script>
+</head>
+
+<body>
+<script type="text/javascript" src="js/theme.js"></script>
+
+<div id="app">
+    <div class="search">
+        <input type="text" name="search" placeholder="a&b, !a|b, a->b" v-model="search"/>
+    </div>
+
+    <div v-if="search" class="div-table">
+        <table class="table table-sm text-center">
+            <thead>
+            <tr>
+                <th v-for="v in getVars(search)">{{ v }}</th>
+                <th>{{ search }}</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr v-for="trow in table">
+                <td v-for="val in trow">{{ val }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0/vue.global.prod.js"></script>
+
+<script type="text/javascript" src="js/debug.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="sw.js"></script>
+</body>
+</html>

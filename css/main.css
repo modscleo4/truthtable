@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14pt;
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-size: cover;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%) no-repeat 50% 50%;
+    color: var(--text-color);
+    padding-right: 0 !important; /* Because of Bootstrap Modals */
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-color-hover);
+    text-decoration: underline;
+}
+
+.modal-content {
+    background-color: var(--even);
+}
+
+.modal-content .close {
+    color: var(--text-color) !important;
+}
+
+.modal-header {
+    border-color: var(--odd);
+}
+
+.custom-select {
+    background: var(--custom-select-bg) no-repeat right .75rem center/8px 10px;
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+    border-color: var(--input-border-color);
+}
+
+.custom-control-label::before {
+    background-color: var(--input-background-color);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b3b3b;
+    border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #262626;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #161616;
+}
+
+::-webkit-scrollbar-track {
+    background: #b5b5b5;
+    border: none;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+#app {
+    width: 100%;
+    padding: 16px;
+    min-width: 400px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search {
+    width: 50%;
+    text-align: center;
+}
+
+.search input {
+    outline: none;
+    border-radius: 4px;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid;
+
+    background-color: var(--input-background-color);
+    border-color: var(--input-border-color);
+    color: var(--text-color);
+}
+
+.search input:hover {
+    border-color: var(--input-border-color-hover);
+}
+
+.search input:focus {
+    border-color: var(--input-border-color-focus);
+}
+
+.div-table {
+    background: var(--even);
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.div-table table {
+    margin: 0;
+    width: max-content;
+}
+
+.div-table table th {
+    color: var(--link-color);
+}
+
+.div-table table td {
+    color: var(--text-color);
+    padding: 8px 16px;
+}
+
+footer {
+    padding: 24px 0;
+    font-size: 0.85em;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 400px) {
+    .sidebar.open {
+        width: 100%;
+    }
+}
